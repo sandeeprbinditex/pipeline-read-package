@@ -31,9 +31,9 @@ jobs:
       uses: s4u/maven-settings-action@v2.8.0
       with:
         servers: '[{"id": "github", "username": "sandeepbinditex", "password": "${GITHUB_TOKEN_REF}"}]'
-        githubServer: false
+        githubServer: true
         override: true
     - name: Build with Maven
       run: mvn -B package --file pom.xml
       env:
-        GITHUB_TOKEN_REF: ${{ secrets.APP_TOKEN }}
+        GITHUB_TOKEN_REF: ${{ secrets.READ_PACKAGE }}
