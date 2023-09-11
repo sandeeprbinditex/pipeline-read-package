@@ -27,8 +27,12 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - uses: s4u/maven-settings-action@v2.8.0
+    - name: Setup Maven Settings
+      uses: s4u/maven-settings-action@v2.8.0
       with:
-        servers: '[{"id": "github", "username": "sandeepbinditex", "password": "${{ secrets.READ_PACKAGE }}"}]'
+        servers: '[{"id": "github", "username": "sandeepbinditex", "password": ""${GITHUB_TOKEN_REF}""}]'
+        githubServer: false
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+      env:
+        GITHUB_TOKEN_REF: ${{ secrets.READ_PACKAGE }}
