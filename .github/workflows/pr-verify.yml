@@ -30,7 +30,7 @@ jobs:
     - name: Setup Maven Settings
       uses: s4u/maven-settings-action@v2.8.0
       with:
-        servers: '[{"id": "github", "username": "sandeepbinditex", "password": "${GITHUB_TOKEN_REF}"}]'
+        servers: '[{"id": "github", "username": "sandeeprbinditex", "password": "${GITHUB_TOKEN_REF}"}]'
         githubServer: true
         override: true
     - name: Build with Maven
