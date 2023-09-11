@@ -36,4 +36,4 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
       env:
-        GITHUB_TOKEN_REF: ${{ secrets.READ_PACKAGE }}
+        GITHUB_TOKEN_REF: ${{ secrets.APP_TOKEN }}
